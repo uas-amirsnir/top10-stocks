@@ -1,0 +1,18 @@
+{
+  "name": "Top 10 Stocks",
+  "short_name": "TOP 10",
+  "description": "Top 10 stocks where long-term conviction says to increase ownership. Public market data, read-only, not investment advice.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
