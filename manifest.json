@@ -1,7 +1,7 @@
 {
   "name": "Top 10 Stocks",
   "short_name": "TOP 10",
-  "description": "Top 10 stocks where long-term conviction says to increase ownership. Public market data, read-only, not investment advice.",
+  "description": "The ten strongest long-term stock candidates, re-ranked automatically every 10 minutes on trading days. Private list - personal access code required. Market data only, not investment advice.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
