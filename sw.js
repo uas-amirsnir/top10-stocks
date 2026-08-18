@@ -1,7 +1,8 @@
 // Service worker: network-first (so the 10-minute updates always win), cache only as an offline fallback.
-// CACHE VERSION BUMPED to v3 (2026-08-17): forces eviction of any page cached BEFORE the access gate existed
+// CACHE VERSION BUMPED to v4 (2026-08-18: force installed apps off the broken pre-fix build)
+// previously v3 (2026-08-17): forces eviction of any page cached BEFORE the access gate existed
 // - Safari in particular can serve a stale copy for a long time, and an old copy was the ungated public page.
-const CACHE = 't10-v3';
+const CACHE = 't10-v4';
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil((async () => {
   const names = await caches.keys();
