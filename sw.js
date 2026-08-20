@@ -11,6 +11,17 @@ self.addEventListener('activate', e => e.waitUntil((async () => {
 })()));
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
+  // The static data file carries a content hash in its NAME, so a cached copy can never be stale: serve it
+  // from cache first and skip the network entirely. This is what makes the 10-minute refresh cheap - only
+  // index.html moves (Amir 2026-08-20: "so it will be very quick to update").
+  if (/static-[0-9a-f]+\.enc$/.test(e.request.url)) {
+    e.respondWith(caches.match(e.request).then(hit => hit || fetch(e.request).then(r => {
+      const copy = r.clone();
+      caches.open(CACHE).then(c => c.put(e.request, copy));
+      return r;
+    })));
+    return;
+  }
   e.respondWith(
     fetch(e.request).then(r => {
       const copy = r.clone();
