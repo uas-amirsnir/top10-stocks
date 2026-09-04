@@ -1,0 +1,8 @@
+publish_site.cmd
+preflight_last.txt
+# OPERATIONAL LOGS ARE NOT PART OF THE SITE (2026-09-04). This folder IS the published repository, so
+# anything written here is served to anyone with the URL. publish.log carried 311 KB of Python
+# tracebacks - 174 local filesystem paths and the account name - and preflight_block.log 70 KB of
+# gate verdicts. Neither is read over the web by anything; both are written and read locally.
+publish.log
+preflight_block.log
